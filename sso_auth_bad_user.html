@@ -1,0 +1,26 @@
+{% extends "_base.html" %}
+{% block title %}Authentication failed{% endblock %}
+
+{% block header %}
+<style type="text/css">
+    {% include "sso.css" without context %}
+</style>
+{% endblock %}
+
+{% block body %}
+<div class="error_page">
+    <header>
+        <h1>Cela n'a pas l'air normal</h1>
+        <p>
+			<strong>Nous n'avons pas pu valider votre compte {{ server_name }}</strong>
+            via single&nbsp;sign&#8209;on&nbsp;(SSO), parce que le fournisseur d'identité SSO
+            a renvoyé des informations différentes de celles que vous avez fournies lors de votre connexion.
+        </p>
+        <p>
+			Réessayez l'opération et assurez-vous que vous utilisez les mêmes détails sur le
+            le fournisseur d'identité que lorsque vous vous connectez à votre compte.
+        </p>
+    </header>
+</div>
+{% include "sso_footer.html" without context %}
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends "_base.html" %}
+{% block title %}Compte SSO désactivé{% endblock %}
+
+{% block header %}
+<style type="text/css">
+    {% include "sso.css" without context %}
+</style>
+{% endblock %}
+
+{% block body %}
+<div class="error_page">
+    <header>
+        <h1>Votre compte a été désactivé</h1>
+        <p>
+            <strong>Pas de compte trouvé</strong>
+        </p>
+        <p>
+			Votre compte a peut-être été désactivé par l'administrateur du serveur.
+            Vous pouvez essayer de créer un nouveau compte ou contacter l'administrateur du serveur.
+        </p>
+    </header>
+</div>
+{% include "sso_footer.html" without context %}
+{% endblock %}

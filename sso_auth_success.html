@@ -1,0 +1,25 @@
+{% extends "_base.html" %}
+{% block title %}Authentification réussie{% endblock %}
+
+{% block header %}
+<style type="text/css">
+    {% include "sso.css" without context %}
+</style>
+<script>
+    if (window.onAuthDone) {
+        window.onAuthDone();
+    } else if (window.opener && window.opener.postMessage) {
+        window.opener.postMessage("authDone", "*");
+    }
+</script>
+{% endblock %}
+
+{% block body %}
+<header>
+    <h1>Merci</h1>
+    <p>
+		Maintenant que nous savons qu'il s'agit de vous, vous pouvez fermer cette fenêtre et retourner à l'application.
+    </p>
+</header>
+{% include "sso_footer.html" without context %}
+{% endblock %}

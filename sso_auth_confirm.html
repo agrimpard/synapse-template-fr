@@ -1,0 +1,27 @@
+{% extends "_base.html" %}
+{% block title %}Confirm it's you{% endblock %}
+
+{% block header %}
+<style type="text/css">
+    {% include "sso.css" without context %}
+</style>
+{% endblock %}
+
+{% block body %}
+<header>
+    <h1>Confirmer que c'est bien vous pour continuer</h1>
+    <p>
+		Un client essaie de {{ description }}. Pour confirmer cette action
+        réautorisez votre compte avec l'authentification unique.
+    </p>
+    <p><strong>
+        Si vous ne vous y attendiez pas, votre compte peut être compromis.
+    </strong></p>
+</header>
+<main>
+    <a href="{{ redirect_url }}" class="primary-button">
+        Continuer avec {{ idp.idp_name }}
+    </a>
+</main>
+{% include "sso_footer.html" without context %}
+{% endblock %}
