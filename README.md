@@ -4,7 +4,7 @@ Traduction de Matrix Synapse en français.
 
 Tout n'est pas traduit donc n'hésitez pas à proposer vos traductions !
 
-## installation de la traduction
+## Installation de la traduction
 
 Créer un répertoire pour le template en français :
 
